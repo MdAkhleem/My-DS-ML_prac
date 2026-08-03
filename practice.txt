@@ -1,0 +1,354 @@
+Git Commands Cheat Sheet 
+=======================
+
+This file is a simple guide for the most useful Git commands, including when to use them and where they are used.
+
+1. Starting with Git
+--------------------
+
+- git init
+  - What it does: Initializes a new Git repository in the current folder.
+  - When to use: When you create a new project and want to start tracking it with Git.
+  - Where to use: Inside your project folder on your local machine.
+
+- git clone <repository-url>
+  - What it does: Downloads a copy of an existing repository from GitHub/GitLab/Bitbucket to your computer.
+  - When to use: When you want to work on an existing project.
+  - Where to use: In your local machine, usually in a new folder.
+
+2. Checking Repository Status
+-----------------------------
+
+- git status
+  - What it does: Shows which files are modified, staged, or untracked.
+  - When to use: Before committing, before switching branches, or anytime you want to see your progress.
+  - Where to use: In the working directory of the repository.
+
+- git log --oneline --decorate --graph --all
+  - What it does: Shows the commit history in a compact visual format.
+  - When to use: To review previous commits or understand project history.
+  - Where to use: In the local repository.
+
+3. Working with Changes
+-----------------------
+
+- git add <file>
+  - What it does: Adds a specific file to the staging area.
+  - When to use: After editing a file and before committing it.
+  - Where to use: In the working directory, before the commit.
+
+- git add .
+  - What it does: Adds all changed files to the staging area.
+  - When to use: When you are ready to stage everything for a commit.
+  - Where to use: In the repository root.
+
+- git diff
+  - What it does: Shows changes in your working directory that are not staged yet.
+  - When to use: To review what you changed before staging.
+  - Where to use: In the working directory.
+
+- git diff --staged
+  - What it does: Shows changes that are staged but not committed yet.
+  - When to use: Before committing to double-check your staged changes.
+  - Where to use: In the staging area of the repository.
+
+4. Saving Changes with Commit
+-----------------------------
+
+- git commit -m "message"
+  - What it does: Saves the staged changes into a new commit.
+  - When to use: After you have staged your changes and want to save a checkpoint.
+  - Where to use: In the local repository after staging.
+
+- git commit -am "message"
+  - What it does: Stages modified tracked files and commits them in one step.
+  - When to use: When files are already tracked and you do not need to add new files.
+  - Where to use: In the local repository.
+
+5. Undoing or Reverting Changes
+-------------------------------
+
+- git restore <file>
+  - What it does: Reverts changes in a file to the last committed version.
+  - When to use: If you made unwanted edits and want to discard them.
+  - Where to use: In the working directory.
+
+- git restore --staged <file>
+  - What it does: Removes a file from the staging area without deleting its changes.
+  - When to use: If you staged something by mistake.
+  - Where to use: In the staging area.
+
+- git reset --soft HEAD~1
+  - What it does: Removes the last commit but keeps changes staged.
+  - When to use: If you want to edit the last commit message or change what was committed.
+  - Where to use: In the local repository.
+
+- git reset --hard HEAD~1
+  - What it does: Removes the last commit and permanently deletes the changes.
+  - When to use: Only when you are sure you want to discard the latest commit.
+  - Where to use: In the local repository.
+
+- git revert <commit-id>
+  - What it does: Creates a new commit that undoes an earlier commit.
+  - When to use: When you want to safely undo a commit that was already pushed.
+  - Where to use: In the local repository and then push it to remote.
+
+6. Branching Work
+----------------
+
+- git branch
+  - What it does: Lists all branches.
+  - When to use: To see available branches.
+  - Where to use: In the local repository.
+
+- git branch <branch-name>
+  - What it does: Creates a new branch.
+  - When to use: When starting a new feature, bug fix, or experiment.
+  - Where to use: In the local repository.
+
+- git checkout <branch-name>
+  - What it does: Switches to another branch.
+  - When to use: When you want to work on a different task.
+  - Where to use: In the local repository.
+
+- git checkout -b <branch-name>
+  - What it does: Creates a new branch and switches to it in one step.
+  - When to use: When starting fresh work on a feature or bug fix.
+  - Where to use: In the local repository.
+
+- git switch <branch-name>
+  - What it does: Switches to a different branch.
+  - When to use: A cleaner alternative to checkout when changing branches.
+  - Where to use: In the local repository.
+
+- git switch -c <branch-name>
+  - What it does: Creates and switches to a new branch.
+  - When to use: When you need a new branch for a feature.
+  - Where to use: In the local repository.
+
+7. Merging Branches
+-------------------
+
+- git merge <branch-name>
+  - What it does: Combines changes from another branch into the current branch.
+  - When to use: When a feature branch is complete and you want to merge it into main.
+  - Where to use: In the current branch locally.
+
+- git branch -d <branch-name>
+  - What it does: Deletes a branch after it has been merged.
+  - When to use: When the branch is no longer needed.
+  - Where to use: In the local repository.
+
+8. Working with Remote Repositories
+----------------------------------
+
+- git remote -v
+  - What it does: Lists the remote repositories connected to your local repo.
+  - When to use: To check where your code is being pushed or pulled from.
+  - Where to use: In the local repository.
+
+- git remote add origin <url>
+  - What it does: Connects your local repository to a remote repository.
+  - When to use: The first time you link your local repo to GitHub/GitLab.
+  - Where to use: In the local repository.
+
+- git fetch
+  - What it does: Downloads updates from the remote repository without changing your local branch.
+  - When to use: When you want to see what changed on remote before merging.
+  - Where to use: From the local repository to the remote.
+
+- git pull
+  - What it does: Fetches and merges remote changes into your current branch.
+  - When to use: Before starting work or when you want to update your branch with remote changes.
+  - Where to use: In the local repository.
+
+- git push
+  - What it does: Uploads your local commits to the remote repository.
+  - When to use: After committing your work and wanting to share it online.
+  - Where to use: From your local repository to the remote repository.
+
+9. Saving Work Temporarily
+--------------------------
+
+- git stash
+  - What it does: Temporarily stores your uncommitted changes.
+  - When to use: When you need to switch tasks quickly without losing your current work.
+  - Where to use: In the working directory.
+
+- git stash pop
+  - What it does: Restores the most recent stashed changes.
+  - When to use: When you want to continue your earlier work.
+  - Where to use: In the local repository.
+
+10. Useful Advanced Commands
+----------------------------
+
+- git cherry-pick <commit-id>
+  - What it does: Applies a specific commit from one branch to another.
+  - When to use: When you want one commit from another branch without merging everything.
+  - Where to use: In the current branch locally.
+
+- git reflog
+  - What it does: Shows the history of HEAD movements.
+  - When to use: To recover from mistakes such as losing track of a commit.
+  - Where to use: In the local repository.
+
+- git tag <tag-name>
+  - What it does: Creates a tag for a specific commit.
+  - When to use: To mark releases such as v1.0.0.
+  - Where to use: In the local repository.
+
+Quick Tips
+----------
+
+- Use git status often.
+- Commit small, meaningful changes.
+- Pull before pushing to avoid conflicts.
+- Use branches for features and bugs.
+- Never use git reset --hard carelessly.
+
+Example Workflow
+----------------
+
+1. git clone <repo-url>
+2. cd <project-folder>
+3. git status
+4. git checkout -b feature-name
+5. edit files
+6. git add .
+7. git commit -m "Add new feature"
+8. git pull
+9. git push
+
+Useful Git Commands to Run in Terminal
+--------------------------------------
+
+These are the commands you can run directly in the terminal or PowerShell.
+
+- git status
+  - What it does: Shows the current state of your repository.
+  - When to use: Before committing, before switching branches, or whenever you want to check changes.
+  - Where to use: In the project folder terminal.
+
+- git add .
+  - What it does: Stages all modified files.
+  - When to use: Before creating a commit.
+  - Where to use: In the terminal from the repository root.
+
+- git commit -m "message"
+  - What it does: Saves your staged changes with a commit message.
+  - When to use: After staging files and wanting to save your work.
+  - Where to use: In the terminal.
+
+- git push
+  - What it does: Uploads your commits to the remote repository.
+  - When to use: When you want to share your work on GitHub/GitLab.
+  - Where to use: In the terminal after committing.
+
+- git pull
+  - What it does: Downloads and merges the latest changes from the remote branch.
+  - When to use: Before starting work or before pushing.
+  - Where to use: In the terminal.
+
+- git branch
+  - What it does: Lists all branches.
+  - When to use: To view or manage branches.
+  - Where to use: In the terminal.
+
+- git checkout -b <branch-name>
+  - What it does: Creates a new branch and switches to it.
+  - When to use: When starting a new feature or bug fix.
+  - Where to use: In the terminal.
+
+- git switch <branch-name>
+  - What it does: Switches to an existing branch.
+  - When to use: When changing tasks or moving between branches.
+  - Where to use: In the terminal.
+
+- git merge <branch-name>
+  - What it does: Combines changes from one branch into another.
+  - When to use: When a feature is complete and you want to merge it.
+  - Where to use: In the terminal.
+
+- git stash
+  - What it does: Temporarily saves your changes without committing them.
+  - When to use: When you need to switch tasks quickly.
+  - Where to use: In the terminal.
+
+- git stash pop
+  - What it does: Restores the most recently stashed changes.
+  - When to use: When you want to continue the work you saved temporarily.
+  - Where to use: In the terminal.
+
+- git log --oneline
+  - What it does: Shows recent commits in a short format.
+  - When to use: To review the commit history quickly.
+  - Where to use: In the terminal.
+
+Quick Terminal Tips
+-------------------
+
+- Open the terminal in the project folder before running commands.
+- Run git status often to avoid mistakes.
+- Use clear commit messages like "Add login page".
+- Pull before pushing to avoid merge conflicts.
+
+VS Code Steps to Connect Git, Push, and Pull with HTTPS
+------------------------------------------------------
+
+A. Using Terminal Commands
+--------------------------
+
+1. Open VS Code terminal.
+2. Go to your project folder:
+   - cd path/to/your/folder
+3. Check if Git is installed:
+   - git --version
+4. Clone a repository from HTTPS:
+   - git clone https://github.com/your-username/your-repo.git
+5. Connect your local folder to GitHub using HTTPS:
+   - git init
+   - git remote add origin https://github.com/your-username/your-repo.git
+6. Add your files:
+   - git add .
+7. Commit your files:
+   - git commit -m "Initial commit"
+8. Push to GitHub:
+   - git push -u origin main
+9. Pull latest changes:
+   - git pull origin main
+
+Useful HTTPS commands:
+- git clone https://github.com/your-username/your-repo.git
+- git pull origin main
+- git pull https://github.com/your-username/your-repo.git main
+
+B. Without Using Terminal Commands
+----------------------------------
+
+1. Open your project folder in VS Code.
+2. Press Ctrl+Shift+G to open Source Control.
+3. If the folder is not a Git repo yet, click "Initialize Repository".
+4. In the Source Control view, you will see changed files.
+5. Click the + icon next to files to stage them.
+6. Type a commit message and click the checkmark icon to commit.
+7. To connect to GitHub with HTTPS, use the Command Palette:
+   - Press Ctrl+Shift+P
+   - Type "Git: Add Remote"
+   - Enter the remote name as origin
+   - Enter the HTTPS URL of your GitHub repository
+8. To push code:
+   - Click the three-dot menu in Source Control
+   - Choose "Push"
+9. To pull code:
+   - Click the three-dot menu in Source Control
+   - Choose "Pull"
+
+C. Important Notes
+------------------
+
+- HTTPS login may ask for your GitHub username and password or a Personal Access Token.
+- If you are using GitHub, a Personal Access Token is recommended instead of a password.
+- If you see an error like "fatal: not a git repository", run git init first.
+- If you see an error like "remote origin already exists", use:
+  - git remote set-url origin https://github.com/your-username/your-repo.git
