@@ -1,3 +1,5 @@
+Git Repository commands :
+
 Topics I am learning
 Git initialization (git init)
 Staging changes (git add)
