@@ -1,4 +1,4 @@
-Git Commands Cheat Sheet
+Git Commands Cheat Sheet 
 =======================
 
 This file is a simple guide for the most useful Git commands, including when to use them and where they are used.
@@ -219,3 +219,67 @@ Example Workflow
 7. git commit -m "Add new feature"
 8. git pull
 9. git push
+
+VS Code Git Related Commands and Shortcuts
+-----------------------------------------
+
+These are useful when you are working inside Visual Studio Code with Git integrated.
+
+- Ctrl+Shift+G
+  - What it does: Opens the Source Control panel in VS Code.
+  - When to use: When you want to view changed files, stage changes, or commit.
+  - Where to use: In VS Code editor.
+
+- Ctrl+P
+  - What it does: Opens the quick file search.
+  - When to use: When you want to quickly open files in the repo.
+  - Where to use: In VS Code editor.
+
+- Ctrl+Shift+P
+  - What it does: Opens the Command Palette.
+  - When to use: When you want to run Git commands like "Git: Commit", "Git: Pull", or "Git: Push".
+  - Where to use: In VS Code editor.
+
+- Git: Initialize Repository
+  - What it does: Starts Git tracking for the current folder.
+  - When to use: When a folder is not yet a Git repo but you want to turn it into one.
+  - Where to use: In VS Code Command Palette.
+
+- Git: Commit
+  - What it does: Opens commit UI for staging and committing changes.
+  - When to use: When you are ready to commit your changes from VS Code.
+  - Where to use: In the Source Control panel.
+
+- Git: Pull
+  - What it does: Pulls latest changes from the remote repository.
+  - When to use: Before continuing work or before pushing updates.
+  - Where to use: In VS Code Command Palette or Source Control.
+
+- Git: Push
+  - What it does: Pushes your local commits to the remote repository.
+  - When to use: After committing your work and sharing it online.
+  - Where to use: In VS Code Command Palette or Source Control.
+
+- Git: Create Branch
+  - What it does: Creates a new branch from VS Code.
+  - When to use: When starting a new feature or bug fix.
+  - Where to use: In the Source Control panel or Command Palette.
+
+- Git: Checkout to...
+  - What it does: Switches to an existing branch.
+  - When to use: When you want to change branches without using the terminal.
+  - Where to use: In the Source Control panel.
+
+- View -> Command Palette
+  - What it does: Helps you access Git features quickly.
+  - When to use: When you want to find Git-related actions without memorizing commands.
+  - Where to use: In VS Code UI.
+
+Quick VS Code Git Tips
+----------------------
+
+- Use the Source Control icon on the left sidebar for Git operations.
+- Stage files by clicking the + icon next to changed files.
+- Commit from the Source Control panel using the checkmark icon.
+- Use the three-dot menu for more Git actions like pull, push, and fetch.
+- Keep the integrated terminal open if you want to use both VS Code UI and terminal commands.
