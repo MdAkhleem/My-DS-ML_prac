@@ -7,3 +7,4 @@ Creating commits (git commit)
 Working with branches
 Pushing code to GitHub (git push)
 Pulling changes (git pull)
+git change branch (git branch -m <branch name>)
