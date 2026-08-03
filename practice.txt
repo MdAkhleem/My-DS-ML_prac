@@ -220,66 +220,135 @@ Example Workflow
 8. git pull
 9. git push
 
-VS Code Git Related Commands and Shortcuts
------------------------------------------
+Useful Git Commands to Run in Terminal
+--------------------------------------
 
-These are useful when you are working inside Visual Studio Code with Git integrated.
+These are the commands you can run directly in the terminal or PowerShell.
 
-- Ctrl+Shift+G
-  - What it does: Opens the Source Control panel in VS Code.
-  - When to use: When you want to view changed files, stage changes, or commit.
-  - Where to use: In VS Code editor.
+- git status
+  - What it does: Shows the current state of your repository.
+  - When to use: Before committing, before switching branches, or whenever you want to check changes.
+  - Where to use: In the project folder terminal.
 
-- Ctrl+P
-  - What it does: Opens the quick file search.
-  - When to use: When you want to quickly open files in the repo.
-  - Where to use: In VS Code editor.
+- git add .
+  - What it does: Stages all modified files.
+  - When to use: Before creating a commit.
+  - Where to use: In the terminal from the repository root.
 
-- Ctrl+Shift+P
-  - What it does: Opens the Command Palette.
-  - When to use: When you want to run Git commands like "Git: Commit", "Git: Pull", or "Git: Push".
-  - Where to use: In VS Code editor.
+- git commit -m "message"
+  - What it does: Saves your staged changes with a commit message.
+  - When to use: After staging files and wanting to save your work.
+  - Where to use: In the terminal.
 
-- Git: Initialize Repository
-  - What it does: Starts Git tracking for the current folder.
-  - When to use: When a folder is not yet a Git repo but you want to turn it into one.
-  - Where to use: In VS Code Command Palette.
+- git push
+  - What it does: Uploads your commits to the remote repository.
+  - When to use: When you want to share your work on GitHub/GitLab.
+  - Where to use: In the terminal after committing.
 
-- Git: Commit
-  - What it does: Opens commit UI for staging and committing changes.
-  - When to use: When you are ready to commit your changes from VS Code.
-  - Where to use: In the Source Control panel.
+- git pull
+  - What it does: Downloads and merges the latest changes from the remote branch.
+  - When to use: Before starting work or before pushing.
+  - Where to use: In the terminal.
 
-- Git: Pull
-  - What it does: Pulls latest changes from the remote repository.
-  - When to use: Before continuing work or before pushing updates.
-  - Where to use: In VS Code Command Palette or Source Control.
+- git branch
+  - What it does: Lists all branches.
+  - When to use: To view or manage branches.
+  - Where to use: In the terminal.
 
-- Git: Push
-  - What it does: Pushes your local commits to the remote repository.
-  - When to use: After committing your work and sharing it online.
-  - Where to use: In VS Code Command Palette or Source Control.
-
-- Git: Create Branch
-  - What it does: Creates a new branch from VS Code.
+- git checkout -b <branch-name>
+  - What it does: Creates a new branch and switches to it.
   - When to use: When starting a new feature or bug fix.
-  - Where to use: In the Source Control panel or Command Palette.
+  - Where to use: In the terminal.
 
-- Git: Checkout to...
+- git switch <branch-name>
   - What it does: Switches to an existing branch.
-  - When to use: When you want to change branches without using the terminal.
-  - Where to use: In the Source Control panel.
+  - When to use: When changing tasks or moving between branches.
+  - Where to use: In the terminal.
 
-- View -> Command Palette
-  - What it does: Helps you access Git features quickly.
-  - When to use: When you want to find Git-related actions without memorizing commands.
-  - Where to use: In VS Code UI.
+- git merge <branch-name>
+  - What it does: Combines changes from one branch into another.
+  - When to use: When a feature is complete and you want to merge it.
+  - Where to use: In the terminal.
 
-Quick VS Code Git Tips
-----------------------
+- git stash
+  - What it does: Temporarily saves your changes without committing them.
+  - When to use: When you need to switch tasks quickly.
+  - Where to use: In the terminal.
 
-- Use the Source Control icon on the left sidebar for Git operations.
-- Stage files by clicking the + icon next to changed files.
-- Commit from the Source Control panel using the checkmark icon.
-- Use the three-dot menu for more Git actions like pull, push, and fetch.
-- Keep the integrated terminal open if you want to use both VS Code UI and terminal commands.
+- git stash pop
+  - What it does: Restores the most recently stashed changes.
+  - When to use: When you want to continue the work you saved temporarily.
+  - Where to use: In the terminal.
+
+- git log --oneline
+  - What it does: Shows recent commits in a short format.
+  - When to use: To review the commit history quickly.
+  - Where to use: In the terminal.
+
+Quick Terminal Tips
+-------------------
+
+- Open the terminal in the project folder before running commands.
+- Run git status often to avoid mistakes.
+- Use clear commit messages like "Add login page".
+- Pull before pushing to avoid merge conflicts.
+
+VS Code Steps to Connect Git, Push, and Pull with HTTPS
+------------------------------------------------------
+
+A. Using Terminal Commands
+--------------------------
+
+1. Open VS Code terminal.
+2. Go to your project folder:
+   - cd path/to/your/folder
+3. Check if Git is installed:
+   - git --version
+4. Clone a repository from HTTPS:
+   - git clone https://github.com/your-username/your-repo.git
+5. Connect your local folder to GitHub using HTTPS:
+   - git init
+   - git remote add origin https://github.com/your-username/your-repo.git
+6. Add your files:
+   - git add .
+7. Commit your files:
+   - git commit -m "Initial commit"
+8. Push to GitHub:
+   - git push -u origin main
+9. Pull latest changes:
+   - git pull origin main
+
+Useful HTTPS commands:
+- git clone https://github.com/your-username/your-repo.git
+- git pull origin main
+- git pull https://github.com/your-username/your-repo.git main
+
+B. Without Using Terminal Commands
+----------------------------------
+
+1. Open your project folder in VS Code.
+2. Press Ctrl+Shift+G to open Source Control.
+3. If the folder is not a Git repo yet, click "Initialize Repository".
+4. In the Source Control view, you will see changed files.
+5. Click the + icon next to files to stage them.
+6. Type a commit message and click the checkmark icon to commit.
+7. To connect to GitHub with HTTPS, use the Command Palette:
+   - Press Ctrl+Shift+P
+   - Type "Git: Add Remote"
+   - Enter the remote name as origin
+   - Enter the HTTPS URL of your GitHub repository
+8. To push code:
+   - Click the three-dot menu in Source Control
+   - Choose "Push"
+9. To pull code:
+   - Click the three-dot menu in Source Control
+   - Choose "Pull"
+
+C. Important Notes
+------------------
+
+- HTTPS login may ask for your GitHub username and password or a Personal Access Token.
+- If you are using GitHub, a Personal Access Token is recommended instead of a password.
+- If you see an error like "fatal: not a git repository", run git init first.
+- If you see an error like "remote origin already exists", use:
+  - git remote set-url origin https://github.com/your-username/your-repo.git
